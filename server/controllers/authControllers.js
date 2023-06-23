@@ -15,6 +15,12 @@ const registerUser = async (req, res) => {
         error: "name is required",
       });
     }
+    //check if email entered
+    if(!email){
+      return res.json({
+        error:"please enter your email"
+      })
+    }
     //check password is good
     if (!password || password.length < 6) {
       return res.json({
