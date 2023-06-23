@@ -8,7 +8,7 @@ export function UserContextProvider({ children }) {
 
   useEffect(() => {
     if (!user) {
-      axios.get("/profile").then(({ data }) => {
+      axios.get("http://localhost:5000/profile").then(({ data }) => {
         setUser(data);
       });
     }
@@ -19,3 +19,4 @@ export function UserContextProvider({ children }) {
     </UserContext.Provider>
   );
 }
+

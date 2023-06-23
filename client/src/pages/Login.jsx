@@ -4,6 +4,7 @@ import axios from 'axios'
 import {toast} from "react-hot-toast"
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "./styles/login.css"
 
 const Login = () => {
   const navigate = useNavigate()
@@ -16,7 +17,7 @@ const Login = () => {
     const {email,password} = data
 
     try {
-      const {data} = await axios.post('/login',{
+      const {data} = await axios.post('http://localhost:5000/login',{
         email,
         password
       })
@@ -25,7 +26,8 @@ const Login = () => {
       }
       else{
         setData({})
-        navigate('/dashboard')
+        toast.success("Login successful Welcome to Dashboard");
+        navigate('/')
 
       }
     } catch (error) {
@@ -54,7 +56,7 @@ const Login = () => {
 
         <button type="submit">Login</button>
 
-      <p className="para">if you don't have an account <Link to="/register">Register</Link></p>
+      <p className="para">Don't have an account please <Link to="/register" style={{color:"blue"}}>Register</Link></p>
       </form>
     </div>
   );

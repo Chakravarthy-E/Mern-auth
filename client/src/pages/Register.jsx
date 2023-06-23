@@ -4,6 +4,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "./styles/register.css"
 
 const Register = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Register = () => {
     e.preventDefault();
     const { name, email, password } = data;
     try {
-      const { data } = await axios.post("/register", {
+      const { data } = await axios.post("http://localhost:5000/register", {
         name,
         email,
         password,
@@ -25,7 +26,7 @@ const Register = () => {
         toast.error(data.error);
       } else {
         setData({});
-        toast.success("Login successful");
+        toast.success("Registration successful");
         navigate("/login");
       }
     } catch (error) {
@@ -62,7 +63,7 @@ const Register = () => {
 
         <button type="submit">submit</button>
 
-        <p className="para">if you have already an account please <Link to="/login">Login</Link></p>
+        <p className="para">Already have an account please <Link to="/login" style={{color:"blue"}}>Login</Link></p>
 
       </form>
     </div>
