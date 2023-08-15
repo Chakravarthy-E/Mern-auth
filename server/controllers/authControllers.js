@@ -16,10 +16,10 @@ const registerUser = async (req, res) => {
       });
     }
     //check if email entered
-    if(!email){
+    if (!email) {
       return res.json({
-        error:"please enter your email"
-      })
+        error: "please enter your email",
+      });
     }
     //check password is good
     if (!password || password.length < 6) {
@@ -88,13 +88,10 @@ const getProfile = (req, res) => {
       if (err) throw err;
       res.json(user);
     });
-  }
-  else{
-    res.json(null)
+  } else {
+    res.json(null);
   }
 };
-
-
 
 module.exports = {
   test,

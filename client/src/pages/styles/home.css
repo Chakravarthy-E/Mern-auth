@@ -9,3 +9,9 @@
     color: #333;
     font-weight: bold;
   }
+  .btn{
+    position: absolute;
+    top: 90%;
+    left :50%;
+    transform: translate(-50%,-50%);
+  }

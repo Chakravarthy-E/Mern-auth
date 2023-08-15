@@ -4,7 +4,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./styles/register.css"
+import "./styles/register.css";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -63,8 +63,12 @@ const Register = () => {
 
         <button type="submit">submit</button>
 
-        <p className="para">Already have an account please <Link to="/login" style={{color:"blue"}}>Login</Link></p>
-
+        <p className="para">
+          Already have an account please{" "}
+          <Link to="/login" style={{ color: "blue" }}>
+            Login
+          </Link>
+        </p>
       </form>
     </div>
   );
